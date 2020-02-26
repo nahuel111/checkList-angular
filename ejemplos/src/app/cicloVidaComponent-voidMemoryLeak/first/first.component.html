@@ -1,0 +1,16 @@
+<div class="cicloVida">
+    <p>first works!</p>
+    <input type="text" [(ngModel)]="person.firstname">
+    <input type="text" [(ngModel)]="person.lastname">
+    <input type="text">
+    <button (click)="add()">cambiar color</button>
+    <button (click)="clean()">limpiar</button>
+    <p>{{value}}</p>
+
+    <div *ngIf="message">
+        <div *ngFor="let item of message">
+            <p>{{item}}</p>
+        </div>
+
+    </div>
+</div>

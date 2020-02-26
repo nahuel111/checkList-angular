@@ -1,0 +1,43 @@
+<div class="app">
+  <h2> Ejemplo de Ciclo de vida de un componente y Avoid memory leak</h2>
+
+  <ul>
+    <li>Ejemplo de Ciclo de vida de un componente</li>
+    <li>https://www.youtube.com/watch?v=I2niAQioGvI</li>
+  </ul>
+  <br>
+  <ul>
+    <li>Avoid memory leak</li>
+    <li>https://www.youtube.com/watch?v=I8-Wr-8YvEI</li>
+    <li>https://www.youtube.com/watch?v=p7k72ItGplY</li>
+  </ul>
+
+  <button [routerLink]="'first'">first</button>
+  <button [routerLink]="'users'">users</button>
+
+  <button (click)="update()">Cambiar color</button>
+
+</div>
+
+<app-first [value]="color"></app-first>
+
+<ng-template #templateOne let-i="items">
+  <p>Ejemplo de ng-template/ng-container y uso de *ngTemplateOutlet</p>
+  <div *ngFor="let item of i">
+    <p>{{item}}</p>
+  </div>
+</ng-template>
+
+
+<app-proyecciones-slot>
+  <div id="mycontent1">Ejemplo de proyeccion con ng-content filtrando con selector</div>
+</app-proyecciones-slot>
+<br>
+
+<app-users>
+  <ng-container *ngTemplateOutlet="templateOne; context:{items: users }" id="users"></ng-container>
+</app-users>
+<ng-container *ngTemplateOutlet="templateOne; context:{items: products }"></ng-container>
+
+
+<router-outlet></router-outlet>
